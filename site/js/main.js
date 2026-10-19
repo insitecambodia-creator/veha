@@ -5,6 +5,29 @@
      that accepts a JSON POST. While empty, the form tells visitors to phone instead. */
   var LEAD_ENDPOINT = '';
 
+  /* ---------- Motion ---------- */
+  var header = document.querySelector('.site-header');
+  var onScroll = function () { header.classList.toggle('scrolled', window.scrollY > 8); };
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+
+  var calm = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (!calm && 'IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -6% 0px' });
+    document.querySelectorAll(
+      '.section-head, .notebook .split > div:first-child, .pairs > div, .till, .feature-list li, .note, .plan, .extras, .photo-row .ph, .clients, .faq h2, details, .trial-grid > *'
+    ).forEach(function (el) {
+      var sibs = el.parentElement ? [].slice.call(el.parentElement.children) : [];
+      el.style.setProperty('--d', Math.min(sibs.indexOf(el), 5) * 0.07 + 's');
+      el.classList.add('reveal');
+      io.observe(el);
+    });
+  }
+
   /* ---------- Language ---------- */
   var KM = {
     skip: 'រំលងទៅមាតិកា',
