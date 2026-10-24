@@ -261,6 +261,37 @@ details p { padding: 0 40px 24px 0; max-width: 62ch; }
   .actions .btn { width: 100%; }
   .extras dl { grid-template-columns: 1fr; }
 }
+/* ---------- Motion (subtle; disabled for reduced-motion users) ---------- */
+.site-header { transition: box-shadow .25s; }
+.site-header.scrolled { box-shadow: 0 6px 24px -14px rgba(0,0,0,.35); }
+.btn { transition: background-color .15s, color .15s, border-color .15s, transform .15s; }
+.btn:hover:not(:disabled) { transform: translateY(-1px); }
+.btn:active:not(:disabled) { transform: translateY(0); }
+
+@media (prefers-reduced-motion: no-preference) {
+  /* one orchestrated moment: hero entrance */
+  .hero h1, .hero .lead, .hero .actions, .hero .fine { animation: rise .8s cubic-bezier(.2,.7,.2,1) both; }
+  .hero .lead { animation-delay: .12s; }
+  .hero .actions { animation-delay: .24s; }
+  .hero .fine { animation-delay: .34s; }
+  .hero-photo img { animation: photo 1.3s cubic-bezier(.2,.7,.2,1) both; }
+
+  /* gentle reveal on scroll (classes added by main.js) */
+  .reveal { opacity: 0; transform: translateY(14px); transition: opacity .7s ease, transform .7s cubic-bezier(.2,.7,.2,1); transition-delay: var(--d, 0s); }
+  .reveal.in { opacity: 1; transform: none; }
+
+  /* demo till */
+  .lines li { animation: lineIn .22s ease-out both; }
+  .done:not([hidden]) { animation: lineIn .3s ease-out both; }
+  .plan { transition: transform .25s ease, box-shadow .25s ease; }
+  .plan:hover { transform: translateY(-4px); box-shadow: 0 18px 36px -24px rgba(0,0,0,.35); }
+  .ph img { transition: transform .5s ease; }
+  .ph:hover img { transform: scale(1.015); }
+}
+@keyframes rise { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: none; } }
+@keyframes photo { from { opacity: 0; transform: scale(1.04); } to { opacity: 1; transform: none; } }
+@keyframes lineIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   * { transition: none !important; }
