@@ -1,8 +1,9 @@
 (function () {
   'use strict';
 
-  /* Set this to a form-handling endpoint (e.g. Formspree, Basin, or your own API)
-     that accepts a JSON POST. While empty, the form tells visitors to phone instead. */
+  /* n8n webhook that receives trial requests (Webhook node, method POST).
+     Paste the Production URL here. While empty, the form tells visitors to phone instead.
+     The webhook must allow this site's origin (Webhook node > Options > Allowed Origins). */
   var LEAD_ENDPOINT = '';
 
   /* ---------- Motion ---------- */
@@ -192,9 +193,12 @@
     }
     var btn = form.querySelector('button[type=submit]');
     btn.disabled = true;
+    data.lang = document.documentElement.lang;
+    data.page = location.href;
+    data.submittedAt = new Date().toISOString();
     fetch(LEAD_ENDPOINT, {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(data)
     }).then(function (r) {
       if (!r.ok) throw new Error(r.status);
