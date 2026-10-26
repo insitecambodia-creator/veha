@@ -1,0 +1,7 @@
+# Old WordPress pages -> matching sections of the new home page
+/pos-pricing-details    /#pricing    301
+/pos-pricing-details/   /#pricing    301
+/free-trial             /#trial      301
+/free-trial/            /#trial      301
+/list-of-clients        /#customers  301
+/list-of-clients/       /#customers  301
