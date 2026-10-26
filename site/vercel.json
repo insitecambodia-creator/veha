@@ -1,7 +1,0 @@
-{
-  "redirects": [
-    { "source": "/pos-pricing-details/?", "destination": "/#pricing", "permanent": true },
-    { "source": "/free-trial/?", "destination": "/#trial", "permanent": true },
-    { "source": "/list-of-clients/?", "destination": "/#customers", "permanent": true }
-  ]
-}

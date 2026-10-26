@@ -1,29 +1,18 @@
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>VEHA Cloud POS | Point of sale for cafés and restaurants in Cambodia</title>
-  <meta name="description" content="VEHA Cloud POS helps cafés, coffee shops and restaurants in Cambodia take orders, manage menus, close shifts and read sales reports. Try it free for 10 days, no payment needed.">
-  <link rel="canonical" href="https://www.veha.app/">
-  <link rel="icon" href="favicon.svg" type="image/svg+xml">
-  <meta name="theme-color" content="#ffffff">
-
-  <meta property="og:type" content="website">
-  <meta property="og:site_name" content="VEHA Cloud POS">
-  <meta property="og:title" content="VEHA Cloud POS: the POS built for Cambodian cafés">
-  <meta property="og:description" content="Take orders, manage your menu and close your shift in one cloud POS. 10-day free trial, no payment needed.">
-  <meta property="og:image" content="https://www.veha.app/img/og.jpg">
-  <meta property="og:url" content="https://www.veha.app/">
-  <meta name="twitter:card" content="summary_large_image">
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@400;600;700&family=Noto+Sans+Khmer:wght@400;600;700&family=Poppins:wght@500;600&display=swap" rel="stylesheet">
-  <script>document.documentElement.classList.add("js")</script>
-  <link rel="stylesheet" href="css/style.css">
-
-  <script type="application/ld+json">
+---
+import Base from "../layouts/Base.astro";
+import HomeHeader from "../components/HomeHeader.astro";
+import Footer from "../components/Footer.astro";
+import km from "../data/km.json";
+---
+<Base
+  title="VEHA Cloud POS | Point of sale for cafés and restaurants in Cambodia"
+  description="VEHA Cloud POS helps cafés, coffee shops and restaurants in Cambodia take orders, manage menus, close shifts and read sales reports. Try it free for 10 days, no payment needed."
+  path="/"
+  ogTitle="VEHA Cloud POS: the POS built for Cambodian cafés"
+  ogDescription="Take orders, manage your menu and close your shift in one cloud POS. 10-day free trial, no payment needed."
+>
+  <Fragment slot="head">
+    <script type="application/ld+json" is:inline>
   {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
@@ -40,31 +29,8 @@
     }
   }
   </script>
-</head>
-<body>
-  <a class="skip" href="#main" data-i18n="skip">Skip to content</a>
-
-  <header class="site-header">
-    <div class="wrap bar">
-      <a class="brand" href="#top" aria-label="VEHA Cloud POS home"><img src="logo.svg" alt="VEHA" width="112" height="30"></a>
-      <nav class="nav" id="nav" aria-label="Main">
-        <a href="#try" data-i18n="nav_try">Try a sale</a>
-        <a href="#features" data-i18n="nav_features">Features</a>
-        <a href="#hardware" data-i18n="nav_hardware">Hardware</a>
-        <a href="#pricing" data-i18n="nav_pricing">Pricing</a>
-        <a href="#customers" data-i18n="nav_customers">Customers</a>
-      </nav>
-      <div class="bar-end">
-        <div class="lang" role="group" aria-label="Language">
-          <button type="button" data-lang="en" aria-pressed="true">EN</button>
-          <button type="button" data-lang="km" aria-pressed="false" lang="km">ខ្មែរ</button>
-        </div>
-        <a class="btn btn-ink btn-sm" href="#trial" data-i18n="cta_trial_short">Free trial</a>
-        <button class="menu-btn" type="button" aria-expanded="false" aria-controls="nav" data-i18n-aria="menu" aria-label="Menu"><span></span><span></span><span></span></button>
-      </div>
-    </div>
-  </header>
-
+  </Fragment>
+  <HomeHeader />
   <main id="main">
     <!-- Hero -->
     <section class="hero" id="top">
@@ -79,7 +45,7 @@
           <p class="fine" data-i18n="hero_fine">No payment needed to start. Same software paying customers use.</p>
         </div>
         <figure class="hero-photo">
-          <img src="img/hero-counter.webp" width="1400" height="1400" alt="A VEHA POS terminal and receipt printer on a café counter next to a latte and coffee machine" fetchpriority="high">
+          <img src="/img/hero-counter.webp" width="1400" height="1400" alt="A VEHA POS terminal and receipt printer on a café counter next to a latte and coffee machine" fetchpriority="high">
           <span class="pills" aria-hidden="true"><i></i><i></i><i></i></span>
         </figure>
       </div>
@@ -195,19 +161,19 @@
       <div class="wrap">
         <ul class="plans">
           <li class="plan">
-            <div class="plan-img plain"><img src="logo.svg" alt="" width="160" height="43" loading="lazy"></div>
+            <div class="plan-img plain"><img src="/logo.svg" alt="" width="160" height="43" loading="lazy"></div>
             <h3 data-i18n="p1_t">Cloud POS License</h3>
             <p class="price"><b>$165</b> <span data-i18n="per_year">for 1 year</span></p>
             <p class="plan-d" data-i18n="p1_d">VEHA Cloud POS for multiple users. For shops that already have compatible POS hardware.</p>
           </li>
           <li class="plan featured">
-            <div class="plan-img"><img src="img/kit-value.webp" alt="Android POS terminal showing the VEHA logo with a receipt printer" width="704" height="704" loading="lazy"></div>
+            <div class="plan-img"><img src="/img/kit-value.webp" alt="Android POS terminal showing the VEHA logo with a receipt printer" width="704" height="704" loading="lazy"></div>
             <h3 data-i18n="p2_t">Business Value Pack</h3>
             <p class="price"><b>$499</b> <span data-i18n="p2_per">1-year license + hardware</span></p>
             <p class="plan-d" data-i18n="p2_d">One POSWell Android POS machine, one receipt printer and a 1-year license. A complete checkout station for a café or small shop.</p>
           </li>
           <li class="plan">
-            <div class="plan-img"><img src="img/kit-premium.webp" alt="Dual-screen all-in-one POS terminal with built-in receipt printer" width="550" height="550" loading="lazy"></div>
+            <div class="plan-img"><img src="/img/kit-premium.webp" alt="Dual-screen all-in-one POS terminal with built-in receipt printer" width="550" height="550" loading="lazy"></div>
             <h3 data-i18n="p3_t">Premium Solution</h3>
             <p class="price"><b>$899</b> <span data-i18n="p2_per">1-year license + hardware</span></p>
             <p class="plan-d" data-i18n="p3_d">Dual-screen POS with a built-in receipt printer and a 1-year license. For busy counters that want one tidy, all-in-one station.</p>
@@ -235,9 +201,9 @@
           <p class="lead" data-i18n="c_p">Real counters, real staff. Here are some of the shops using VEHA.</p>
         </div>
         <div class="photo-row">
-          <figure class="ph tall"><img src="img/beanandco-1.webp" width="900" height="1200" loading="lazy" alt="Two staff at Beans and Co using the VEHA POS at a wooden table"><figcaption>Beans and Co</figcaption></figure>
-          <figure class="ph"><img src="img/poutun-1.webp" width="1100" height="825" loading="lazy" alt="VEHA POS on the counter at Pou Tun Coffee and Eatery"><figcaption>Pou Tun Coffee and Eatery</figcaption></figure>
-          <figure class="ph"><img src="img/poutun-2.webp" width="1100" height="825" loading="lazy" alt="VEHA POS beside a receipt printer at Pou Tun Coffee and Eatery"><figcaption>Pou Tun Coffee and Eatery</figcaption></figure>
+          <figure class="ph tall"><img src="/img/beanandco-1.webp" width="900" height="1200" loading="lazy" alt="Two staff at Beans and Co using the VEHA POS at a wooden table"><figcaption>Beans and Co</figcaption></figure>
+          <figure class="ph"><img src="/img/poutun-1.webp" width="1100" height="825" loading="lazy" alt="VEHA POS on the counter at Pou Tun Coffee and Eatery"><figcaption>Pou Tun Coffee and Eatery</figcaption></figure>
+          <figure class="ph"><img src="/img/poutun-2.webp" width="1100" height="825" loading="lazy" alt="VEHA POS beside a receipt printer at Pou Tun Coffee and Eatery"><figcaption>Pou Tun Coffee and Eatery</figcaption></figure>
         </div>
         <ul class="clients" aria-label="Shops using VEHA">
           <li>Mini Café</li>
@@ -310,20 +276,7 @@
       </div>
     </section>
   </main>
-
-  <footer class="site-footer">
-    <div class="wrap foot">
-      <img src="logo-white.svg" alt="VEHA Cloud POS" width="120" height="32" loading="lazy">
-      <p data-i18n="foot_p">Cloud POS for cafés and restaurants in Cambodia.</p>
-      <ul>
-        <li><a href="tel:+85593923030">093 923 030</a></li>
-        <li><a href="/veha-cloud-pos-privacy-policy/" data-i18n="foot_priv">Privacy policy</a></li>
-        <li><a href="/jobs-and-career-opportunities/" data-i18n="foot_jobs">Careers</a></li>
-        <li><a href="/complete-list-of-pos-vendors-in-cambodia/">POS vendors in Cambodia</a></li>
-      </ul>
-    </div>
-  </footer>
-
-  <script src="js/main.js" defer></script>
-</body>
-</html>
+  <Footer />
+  <script id="km-data" type="application/json" is:inline set:html={JSON.stringify(km)} />
+  <script src="/js/main.js" is:inline defer></script>
+</Base>
