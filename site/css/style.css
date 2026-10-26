@@ -296,3 +296,19 @@ details p { padding: 0 40px 24px 0; max-width: 62ch; }
   html { scroll-behavior: auto; }
   * { transition: none !important; }
 }
+
+/* ---------- Document pages (privacy, vendors, careers) ---------- */
+.doc { padding: clamp(40px, 6vw, 88px) 0 clamp(64px, 8vw, 112px); }
+.doc h1 { font-size: clamp(2rem, 4.4vw, 3.25rem); line-height: 1.1; letter-spacing: -.02em; margin-bottom: 12px; }
+.doc h2 { font-size: 1.375rem; line-height: 1.3; margin: 40px 0 10px; max-width: none; letter-spacing: 0; }
+.doc p, .doc li { max-width: 68ch; }
+.doc p { margin-top: 14px; }
+.doc ul:not(.chips) { margin-top: 12px; padding-left: 1.25em; list-style: disc; }
+.doc li { margin-top: 6px; }
+.doc a { text-underline-offset: 3px; }
+.doc .meta { color: var(--muted); margin-top: 0; }
+.doc .chips { display: flex; flex-wrap: wrap; gap: 10px; margin: 24px 0 32px; }
+.doc .chips li { border: 1.5px solid var(--ink); border-radius: 999px; padding: 8px 16px; font-weight: 600; color: var(--ink); margin: 0; }
+.doc .cta-row { margin-top: 32px; }
+.doc-nav { margin-left: auto; margin-right: 8px; }
+@media (max-width: 560px) { .doc-nav { display: none; } .doc .btn-sm, .site-header .btn-sm { display: inline-flex; } }
